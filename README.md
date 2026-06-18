@@ -5,11 +5,11 @@ Aplicación de Pokédex construida con React y TypeScript como parte del proceso
 ## Tecnologías utilizadas
 
 - **React 18** - librería de UI
-- **TypeScript**
-- **Vite** 
+- **TypeScript** - seguro y fácil de mantener
+- **Vite** - servidor de desarrollo
 - **React Router DOM** - navegación entre rutas
 - **Axios** - cliente HTTP para llamadas a la PokéAPI
-- **Vitest** — framework de testing compatible con Vite
+- **Vitest** - framework de testing compatible con Vite
 - **Testing Library** - utilidades para testear componentes React
 - **Happy DOM** - simulador de navegador para el entorno de tests
 
@@ -20,7 +20,6 @@ Aplicación de Pokédex construida con React y TypeScript como parte del proceso
 
 ## Instalación y uso
 
-```bash
 # Clonar el repositorio
 git clone <url-del-repo>
 cd pokedex
@@ -36,7 +35,6 @@ npx vitest run
 
 # Build de producción
 npm run build
-```
 
 ## Estructura del proyecto
 src/
