@@ -21,7 +21,7 @@ Aplicación de Pokédex construida con React y TypeScript como parte del proceso
 ## Instalación y uso
 ```bash
 # Clonar el repositorio
-git clone <url-del-repo>
+git clone https://github.com/jojashley/pokedex.git
 cd pokedex
 
 # Instalar dependencias
