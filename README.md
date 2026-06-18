@@ -1,4 +1,4 @@
-# Pokédex — Midware Technical Test
+# Pokédex - Midware Technical Test
 
 Aplicación de Pokédex construida con React y TypeScript como parte del proceso de evaluación técnica de Midware.
 
