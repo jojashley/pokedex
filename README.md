@@ -19,7 +19,7 @@ Aplicación de Pokédex construida con React y TypeScript como parte del proceso
 - npm
 
 ## Instalación y uso
-
+```bash
 # Clonar el repositorio
 git clone <url-del-repo>
 cd pokedex
@@ -35,6 +35,7 @@ npx vitest run
 
 # Build de producción
 npm run build
+```
 
 ## Estructura del proyecto
 src/
