@@ -1,0 +1,341 @@
+/* ============================================================
+   ESTILOS GLOBALES DE LA POKÉDEX
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #cc0000;       
+  --color-primary-dark: #8b0000;  
+  --color-primary-darker: #5a0000;  
+  --color-bg: #e53935;            
+  --color-white: #ffffff;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-border: #e0e0e0;
+  --font-main: 'Segoe UI', system-ui, sans-serif;
+  --sidebar-width: 320px;
+  --border-radius: 12px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul { list-style: none; }
+
+.home-page {
+  display: flex;
+  height: 100vh;
+  padding: 16px;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.home-page__sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background-color: var(--color-primary-dark);
+  border-radius: var(--border-radius);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+
+.home-page__detail {
+  flex: 1; 
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page__search {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-page__loading,
+.home-page__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 16px;
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+
+.home-page__error button {
+  padding: 10px 24px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.pokemon-list__empty {
+  color: rgba(255,255,255,0.7);
+  padding: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.pokemon-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  color: var(--color-white);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background-color 0.15s ease;
+  text-align: left;
+}
+
+.pokemon-card:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.pokemon-card--selected {
+  background-color: var(--color-primary-darker);
+}
+
+.pokemon-card__image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  image-rendering: pixelated; 
+}
+
+.pokemon-card__name {
+  flex: 1;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.pokemon-card__id {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f5f5;
+  border-radius: 24px;
+  padding: 8px 16px;
+  width: 280px;
+}
+
+.search-bar__icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-light);
+  flex-shrink: 0;
+}
+
+.search-bar__input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+  color: var(--color-text);
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 4px 20px;
+  border-radius: 20px;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pokemon-detail {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pokemon-detail__state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: var(--color-text-light);
+}
+
+.pokemon-detail__state--error {
+  color: var(--color-primary);
+}
+
+.pokemon-detail__top {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+.pokemon-detail__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.pokemon-detail__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.pokemon-detail__info-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.pokemon-detail__image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.pokemon-detail__name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: var(--color-text);
+}
+
+.pokemon-detail__types {
+  display: flex;
+  gap: 8px;
+}
+
+.pokemon-detail__divider {
+  border: none;
+  border-top: 1px solid var(--color-primary);
+  opacity: 0.3;
+}
+
+.pokemon-detail__info h3,
+.pokemon-detail__evolution h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+.pokemon-detail__data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pokemon-detail__data-row {
+  display: flex;
+  gap: 8px;
+}
+
+.pokemon-detail__data-row dt {
+  font-weight: bold;
+  min-width: 100px;
+  color: var(--color-text);
+}
+
+.pokemon-detail__data-row dd {
+  color: var(--color-text-light);
+  text-transform: capitalize;
+}
+
+.evolution-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.evolution-chain__item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.evolution-chain__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.evolution-chain__image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.evolution-chain__name {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  color: var(--color-text);
+}
+
+.evolution-chain__arrow {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.evolution-chain__loading,
+.evolution-chain__empty {
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    flex-direction: column;
+    height: auto;
+    padding: 8px;
+  }
+
+  .home-page__sidebar {
+    width: 100%;
+    min-width: unset;
+    max-height: 40vh;
+  }
+
+  .home-page__detail {
+    min-height: 60vh;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+}
